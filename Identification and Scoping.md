@@ -123,6 +123,21 @@ When reviewing an alert, an analyst should determine:
 
 The type and severity of an alert influence how quickly the investigation should begin and which response procedures should be followed.
 
+#### Initial Ticket Review
+
+Two security-related tickets were reviewed during the initial triage. Ticket `2023012398704231` concerned outdated endpoint protection definitions on `LPTP-01` (`172.16.1.153`). Although this represented a security-control weakness requiring remediation, it did not initially contain direct evidence of the suspected phishing activity.
+
+<img width="1352" height="344" alt="01-outdated-endpoint-protection-ticket png" src="https://github.com/user-attachments/assets/411589e2-8c6e-44d1-8852-98d1a0c45840" />
+
+> A separate endpoint-protection ticket reviewed during initial triage.
+
+Ticket `2023012398704232` reported a "Weird Error in Outlook" on `WKSTN-02` (`172.16.1.151`). The unusual Outlook behaviour became the starting point for the email-security investigation.
+
+<img width="1351" height="327" alt="02-ticket-2023012398704232-initial-alert png" src="https://github.com/user-attachments/assets/439236a4-3ca1-4e37-b14a-35bdb64ae29e" />
+
+> The initial event notification that triggered the investigation into suspicious Outlook activity on WKSTN-02.
+
+
 ---
 
 ### Gathering Additional Evidence
@@ -150,6 +165,26 @@ Additional evidence may therefore be collected from:
 - Suspicious files and attachments.
 - User reports.
 - Asset ownership records.
+
+#### Evidence and Log Request
+
+Following the review of Ticket `2023012398704232`, the Security Operations team requested Exchange Server logs and message trace records for `michael.ascot@swiftspend.finance` and `alex.swift@swiftspend.finance`.
+
+Web proxy logs were also requested for `WKSTN-02` (`172.16.1.151`). These data sources were required to determine how the suspicious email was delivered, identify related recipients, and establish whether the affected workstation communicated with suspicious external infrastructure.
+
+<img width="661" height="676" alt="03-evidence-and-log-request png" src="https://github.com/user-attachments/assets/f4064391-81c5-4ca8-9c84-9f80599f65ee" />
+
+> Evidence collection request covering email activity for Michael Ascot and Alex Swift, together with web proxy logs for WKSTN-02.
+
+#### Email Authentication Control Review
+
+During the investigation, internal correspondence indicated that email authentication controls for `swiftspend.finance`, including SPF, DKIM, and DMARC, had not been fully implemented or maintained.
+
+A domain-security check also reported that the organisation's domain was not adequately protected against spoofing and phishing abuse. This weakness increased the likelihood that attackers could impersonate internal email addresses and deliver fraudulent messages that appeared legitimate.
+
+<img width="1040" height="584" alt="04-missing-email-authentication-controls png" src="https://github.com/user-attachments/assets/05279063-205e-49e3-9973-89a62cab61d1" />
+
+> Review of the organisation's email authentication posture, highlighting insufficient protection against domain spoofing.
 
 The collected evidence helps analysts reconstruct the sequence of events and understand:
 
