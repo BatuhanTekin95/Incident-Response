@@ -818,4 +818,4 @@ Access to incident data should be limited to authorised personnel.
 - Automated analytics support but do not replace human investigation.
 - Accurate documentation is essential throughout the entire process.
 - Privacy, legal obligations, and evidence integrity must be maintained during the investigation.
-<img width="778" height="537" alt="clipboard" src="https://github.com/user-attachments/assets/9d4005cd-5f80-467c-a85e-6893e1c10464" />
+
