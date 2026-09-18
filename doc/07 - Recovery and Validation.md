@@ -446,9 +446,4 @@ The evidence linked the activity through the attacker IP `223.123.4.50`, includi
 
 The investigation therefore supports an identity-focused response: remove malicious mailbox rules, block phishing infrastructure, revoke attacker-created sharing links, reset and secure compromised identities, revoke active sessions, enforce MFA, and validate that no additional attacker access remains before returning the accounts to normal operation.
 
----
 
-
-Incident Response Module – Room 3 of 4
-
-The practical investigation is based on the Nexus Financial Microsoft 365 incident provided in the TryHackMe lab environment.
