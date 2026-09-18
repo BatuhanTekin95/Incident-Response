@@ -1,6 +1,6 @@
 # Screenshot index — Phishing Unfolding
 
-The 8 and 12 September screenshots are original SOC simulation captures. The 18 September screenshot is a later file-analysis result for a ZIP with a matching filename. All images are copied without changes. The folders reflect screenshot capture dates, not necessarily a continuous incident timeline. The case study cites the screenshots that support each finding.
+The 8 and 12 September screenshots and 17 of the 18 September screenshots are SOC simulation captures. The remaining 18 September image is a file-analysis result for a ZIP with a matching filename. All images are copied without changes. The folders reflect screenshot capture dates, not necessarily a continuous incident timeline. The case study cites the screenshots that support each finding.
 
 [Scenario overview](overview.png) · [Case study](../../doc/05%20-%20Phishing%20Unfolding%20SOC%20Investigation.md)
 
@@ -74,6 +74,23 @@ The 8 and 12 September screenshots are original SOC simulation captures. The 18 
 - [22:42:51](2026-09-12/224251.png)
 - [22:43:31](2026-09-12/224331.png)
 
-## 2026-09-18 (1 screenshot)
+## 2026-09-18 (18 screenshots)
 
 - [15:10:02 — file-analysis result](2026-09-18/151002.png)
+- [15:16:00 — Alert 1026](2026-09-18/151600.png)
+- [15:16:19 — Alert 1027](2026-09-18/151619.png)
+- [15:16:49 — Alert 1028](2026-09-18/151649.png)
+- [15:17:06 — Alert 1029](2026-09-18/151706.png)
+- [15:17:24 — Alert 1030](2026-09-18/151724.png)
+- [15:17:42 — Alert 1031](2026-09-18/151742.png)
+- [15:17:57 — Alert 1032](2026-09-18/151757.png)
+- [15:18:17 — Alert 1033](2026-09-18/151817.png)
+- [15:18:33 — Alert 1034](2026-09-18/151833.png)
+- [15:18:49 — Alert 1035](2026-09-18/151849.png)
+- [15:24:45 — file-creation events](2026-09-18/152445.png)
+- [15:26:01 — second file-event view](2026-09-18/152601.png)
+- [15:28:08 — DNS-related search summary](2026-09-18/152808.png)
+- [15:29:21 — event-code summary](2026-09-18/152921.png)
+- [15:30:21 — PowerShell pipeline details](2026-09-18/153021.png)
+- [15:30:57 — alternative summary query](2026-09-18/153057.png)
+- [15:32:07 — matching email search](2026-09-18/153207.png)
