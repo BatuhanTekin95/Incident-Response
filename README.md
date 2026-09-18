@@ -1,1 +1,19 @@
-# Incident-Response
+# Incident Response
+
+Case studies and lab notes covering the incident response lifecycle. The environments and identities shown in the evidence are part of security training simulations.
+
+## Contents
+
+| Section | Focus |
+| --- | --- |
+| [01 — Incident Response Case Study](doc/01%20-%20Incident%20Response%20Case%20Study.md) | Preparation, logging, and response foundations in the SwiftSpend Financial scenario |
+| [02 — Identification and Scoping](doc/02%20-%20Identification%20and%20Scoping.md) | Alert identification, evidence gathering, and incident scope |
+| [03 — Containment and Threat Intelligence](doc/03%20-%20Containment%20and%20Threat%20Intelligence.md) | Containment choices and indicator enrichment |
+| [04 — Eradication and Remediation](doc/04%20-%20Eradication%20and%20Remediation.md) | Jenkins investigation, eradication, and recovery planning |
+| [05 — Phishing Unfolding SOC Investigation](doc/05%20-%20Phishing%20Unfolding%20SOC%20Investigation.md) | Phishing triage and endpoint investigation using SIEM and Sysmon evidence |
+
+The [Phishing Unfolding screenshot index](evidence/phishing-unfolding/README.md) contains all 65 source screenshots. The case study links directly to the images used for each finding.
+
+## Evidence note
+
+The screenshots document observations in a simulated environment. Where the available screenshots do not establish execution, data transfer, or containment outcomes, the case study states that limit explicitly.
