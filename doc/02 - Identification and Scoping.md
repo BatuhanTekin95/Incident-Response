@@ -1,6 +1,6 @@
-## Identification and Scoping
+# Identification and Scoping
 
-### Overview
+## Overview
 
 After preparing the incident response capability, the next stage is to identify whether a security incident has occurred and determine the extent of the compromise.
 
