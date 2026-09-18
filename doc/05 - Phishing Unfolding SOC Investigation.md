@@ -2,7 +2,7 @@
 
 ## Case overview
 
-This case study documents an investigation in the **Phishing Unfolding** SOC simulation. The available material consists of 65 screenshots captured on **8 and 12 September 2026**. The screenshot dates identify capture sessions; they do not, by themselves, prove that every image belongs to one continuous incident replay.
+This case study documents an investigation in the **Phishing Unfolding** SOC simulation. The available material consists of 65 scenario screenshots captured on **8 and 12 September 2026**, plus one later file-analysis screenshot captured on **18 September 2026**. The screenshot dates identify capture sessions; they do not, by themselves, prove that every image belongs to one continuous incident replay.
 
 The screenshots show a queue of email and process alerts, SIEM searches, Sysmon events, and analyst classification examples. The most significant chain in the 12 September evidence starts with a suspicious invoice-themed email and includes a PowerShell command that references a downloaded remote-shell tool, local reconnaissance, access to a file share, file copying, and repeated DNS lookups. These observations support a **true-positive assessment of malicious endpoint activity** in the simulation. The screenshots alone do not prove that data left the environment.
 
@@ -10,7 +10,7 @@ The screenshots show a queue of email and process alerts, SIEM searches, Sysmon 
 
 ## Scope and method
 
-- **Primary data sources:** email alert details, SIEM searches, and Sysmon process, file-creation, and DNS events.
+- **Primary data sources:** email alert details, SIEM searches, Sysmon process, file-creation, and DNS events, and a later file-analyzer result.
 - **Primary host in the suspicious chain:** `win-3450`.
 - **Related user context visible in paths and email events:** `michael.ascot`.
 - **Additional host reviewed for comparison:** `win-3451`.
@@ -210,19 +210,25 @@ I reviewed each original alert card and the related SIEM screenshots, then recor
 
 ![Alert 1005: Attachment-name search](../evidence/phishing-unfolding/2026-09-12/222057.png)
 
+**File-analysis result for a ZIP with the same filename — captured 2026-09-18 15:10:02**
+
+![Alert 1005: File analyzer result for ImportantInvoice-Febrary.zip](../evidence/phishing-unfolding/2026-09-18/151002.png)
+
+The analyzer labels a **346-byte** ZIP named `ImportantInvoice-Febrary.zip` as **Clean** and reports SHA-256 `145bb70abd0cc625f4a7add8cfb08982c39c4573470c8b87db41d755bd2f9ea0`. The image does not show how this ZIP was obtained, its archive members, or a hash of the original email attachment. I therefore cannot confirm that the analyzed file is byte-for-byte identical to the attachment or use the verdict to establish what the recipient opened.
+
 #### True Positive — SOC analysis
 
 **Time of activity:** I recorded the alert-card email event at **2026-09-08 20:11:47.105**. A separate 12 September SIEM capture shows the same sender and attachment pattern at 21:02:02.539; I did not merge the two event times into one incident timeline.
 
 **List of Affected Entities:** I identified `michael.ascot@tryhatme.com` as the recipient, `john@hatmakereurope.xyz` as the sender, and the recipient mailbox as exposed. The `win-3450` endpoint warrants a separate pivot, but the screenshots do not tie its later activity to this specific ZIP.
 
-**Reason for Classifying as True Positive:** I classified the **delivery attempt** as true positive because the message pressures the recipient with account suspension and legal action while directing them to open `ImportantInvoice-Febrary.zip`. I found the attachment in the mail event, but I could not verify its contents, execution, or a causal link to later PowerShell activity.
+**Reason for Classifying as True Positive:** I classified the **delivery attempt** as true positive because the message pressures the recipient with account suspension and legal action while directing them to open `ImportantInvoice-Febrary.zip`. The later Clean result is for a ZIP with a matching name, not a verified copy of the email attachment. I could not verify the original attachment's contents, execution, or a causal link to later PowerShell activity.
 
 **Reason for Escalating the Alert:** I would escalate to email security and endpoint triage because an unsolicited ZIP and urgent payment pretext reached the user associated with the suspicious host sequence. I would state the attachment-to-execution link as unconfirmed.
 
-**Recommended Remediation Actions:** I would preserve the message and ZIP for safe analysis, remove matching messages, search for the attachment name and sender across recipients, and review Michael's file-open, process, and sign-in telemetry. I would contain the host if the related endpoint activity were confirmed in the same case.
+**Recommended Remediation Actions:** I would preserve the message and ZIP for safe analysis, compare the original attachment's SHA-256 with the analyzer's result, inspect archive members without execution, remove matching messages, search for the attachment name and sender across recipients, and review Michael's file-open, process, and sign-in telemetry. I would contain the host if the related endpoint activity were confirmed in the same case.
 
-**List of Attack Indicators:** I would use `john@hatmakereurope.xyz`, `ImportantInvoice-Febrary.zip`, and the subject `FINAL NOTICE: Overdue Payment - Account Suspension Imminent` as email hunting pivots; the attachment hash is unavailable.
+**List of Attack Indicators:** I would use `john@hatmakereurope.xyz`, `ImportantInvoice-Febrary.zip`, and the subject `FINAL NOTICE: Overdue Payment - Account Suspension Imminent` as email hunting pivots; the original email attachment's hash remains unavailable.
 
 ### Alert 1006 — rdpclip.exe on win-3450
 
@@ -772,4 +778,4 @@ These are proposed actions derived from the screenshot evidence; the archive doe
 
 ## Evidence inventory
 
-All **65** source images are displayed inline: the scenario overview above, followed by the alert cards and their supporting evidence under each alert. Shared SIEM views may appear under more than one alert. The [screenshot index](../evidence/phishing-unfolding/README.md) provides timestamp-based navigation. The images were copied without editing.
+All **66** images are displayed inline: 65 scenario screenshots and one later file-analysis screenshot, with the scenario overview above and the remaining evidence under each alert. Shared SIEM views may appear under more than one alert. The [screenshot index](../evidence/phishing-unfolding/README.md) provides timestamp-based navigation. The images were copied without editing.

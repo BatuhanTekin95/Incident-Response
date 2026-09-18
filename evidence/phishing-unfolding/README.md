@@ -1,6 +1,6 @@
 # Screenshot index — Phishing Unfolding
 
-These are the original screenshots from the SOC simulation, copied without image changes. The folders reflect screenshot capture dates, not necessarily a continuous incident timeline. The case study cites the screenshots that support each finding.
+The 8 and 12 September screenshots are original SOC simulation captures. The 18 September screenshot is a later file-analysis result for a ZIP with a matching filename. All images are copied without changes. The folders reflect screenshot capture dates, not necessarily a continuous incident timeline. The case study cites the screenshots that support each finding.
 
 [Scenario overview](overview.png) · [Case study](../../doc/05%20-%20Phishing%20Unfolding%20SOC%20Investigation.md)
 
@@ -73,3 +73,7 @@ These are the original screenshots from the SOC simulation, copied without image
 - [22:42:07](2026-09-12/224207.png)
 - [22:42:51](2026-09-12/224251.png)
 - [22:43:31](2026-09-12/224331.png)
+
+## 2026-09-18 (1 screenshot)
+
+- [15:10:02 — file-analysis result](2026-09-18/151002.png)
