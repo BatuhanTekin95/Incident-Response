@@ -12,7 +12,7 @@ Case studies and lab notes covering the incident response lifecycle. The environ
 | [04 — Eradication and Remediation](doc/04%20-%20Eradication%20and%20Remediation.md) | Jenkins investigation, eradication, and recovery planning |
 | [05 — Phishing Unfolding SOC Investigation](doc/05%20-%20Phishing%20Unfolding%20SOC%20Investigation.md) | Phishing triage and endpoint investigation using SIEM and Sysmon evidence |
 
-The [Phishing Unfolding screenshot index](evidence/phishing-unfolding/README.md) contains all 65 source screenshots. The case study links directly to the images used for each finding.
+The Phishing Unfolding case study displays all 65 source screenshots inline in its **Case overview** section. The [screenshot index](evidence/phishing-unfolding/README.md) also provides timestamp-based navigation.
 
 ## Evidence note
 
