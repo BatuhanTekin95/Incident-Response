@@ -448,9 +448,6 @@ The investigation therefore supports an identity-focused response: remove malici
 
 ---
 
-## Reference
-
-**[TryHackMe – Response and Recovery](https://tryhackme.com/room/responseandrecovery)**
 
 Incident Response Module – Room 3 of 4
 
