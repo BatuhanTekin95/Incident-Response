@@ -12,6 +12,7 @@ Case studies and lab notes covering the incident response lifecycle. The environ
 | [04 — Eradication and Remediation](doc/04%20-%20Eradication%20and%20Remediation.md) | Jenkins investigation, eradication, and recovery planning |
 | [05 — Phishing Unfolding SOC Investigation](doc/05%20-%20Phishing%20Unfolding%20SOC%20Investigation.md) | Phishing triage and endpoint investigation using SIEM and Sysmon evidence |
 | [06 — Preparation](doc/06%20-%20Preparation.md) | Preparation, logging, detection, and Nexus Financial lab findings with inline screenshots |
+| [07 — Recovery and Validation](doc/07%20-%20Recovery%20and%20Validation.md) | Nexus Financial containment, eradication, recovery checks, and six inline lab screenshots |
 
 The Phishing Unfolding case study displays all 82 scenario screenshots and one file-analysis screenshot inline, with evidence placed under each alert. The [screenshot index](evidence/phishing-unfolding/README.md) also provides timestamp-based navigation.
 
